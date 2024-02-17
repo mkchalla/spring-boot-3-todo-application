@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.2/css/bootstrap.min.css}">
+    <title>Todos</title>
+</head>
+<body>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2">
+            <p>
+                <a href="/" class="btn btn-outline-success">
+                    <i class="bi bi-arrow-left-square-fill"></i>Back
+                </a>
+            </p>
+        </div>
+        <div class="col-6">
+            <h2>Add a new Todo Item</h2>
+            <form action="#" th:action="@{/todo}" th:object="${todoItem}" method="POST">
+                <div class="form-group">
+                    <label for="description">Descripton</label>
+                    <input type="text"
+                           class="form-control"
+                           th:field="*{description}"
+                           id="description"
+                           placeholder="Description">
+                    <button type="submit" class="btn btn-outline-success">
+                        <i class="bi bi-plus-square-fill"> Add Todo</i>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<script th:src="@{webjars/bootstrap/5.2.2/js/bootstrap.min.js}"></script>
+</body>
+</html>
